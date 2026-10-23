@@ -1,0 +1,67 @@
+{
+  "name": "@local/dsh-session-trash",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Session trash bin for DeepSeek Harness: delete sessions into a recoverable bin, restore, purge, auto-expire, batch clean, capacity stats, and take over archived sessions.",
+  "license": "MIT",
+  "author": "zhaoqianguo <844851879@qq.com>",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "dsh-plugin",
+    "session",
+    "trash",
+    "recycle-bin",
+    "archive"
+  ],
+  "engines": {
+    "node": ">=18.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaoqianguo/dsh-session-trash.git"
+  },
+  "homepage": "https://github.com/zhaoqianguo/dsh-session-trash#readme",
+  "bugs": {
+    "url": "https://github.com/zhaoqianguo/dsh-session-trash/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./trash-store": "./trash-store.js",
+    "./sessions-scan": "./sessions-scan.js",
+    "./tool-schema": "./tool-schema.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "trash-store.js",
+    "sessions-scan.js",
+    "tool-schema.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/trash-store.test.mjs test/host-route.test.mjs test/client-smoke.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    },
+    "manifestVersion": 1
+  }
+}

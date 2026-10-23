@@ -1,0 +1,4 @@
+# Bundle patch layer: the row this package inserts into the profile plugin tree.
+- insert:
+    - id: session-trash
+      name: '@local/dsh-session-trash'

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Recycle Bin",
+    "description": "Real session deletion for DSH: right-click a session to move it into a recycle bin, restore it, purge it, and auto-expire old entries after a retention window."
+  }
+}
